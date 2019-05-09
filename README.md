@@ -1,2 +1,2 @@
-# ug-project
+# UG-PROJECT
 Solar Power Forecasting
