@@ -38,4 +38,4 @@ def plot_daily(*dfs, save=None):
 
 
 if __name__ == "__main__":
-    plot_daily(suny_international()['ghi'],save='plot_simple.mp4')
+    plot_daily(suny_international()['ghi'], save='plot_simple.mp4')
