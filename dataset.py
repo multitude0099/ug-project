@@ -1,8 +1,9 @@
 import warnings
+from datetime import datetime
+
+import pandas as pd
 
 warnings.filterwarnings("ignore")
-import pandas as pd
-from datetime import datetime
 
 start = '08:00:00'
 end = '18:00:00'
