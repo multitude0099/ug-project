@@ -10,7 +10,9 @@ plt.rcParams["figure.figsize"] = (20, 3)
 warnings.filterwarnings("ignore")
 
 
-def plot_daily(*dfs, save=None):
+def plot_daily(*dfs, save=None, index=None):
+    if index is not None:
+        dfs = [pd.Series(df, index=index) for df in dfs]
     fig = plt.figure()
     max_y = max((df.max() for df in dfs))
     xlim = (dfs[0].index.time.min(), dfs[0].index.time.max())
@@ -32,10 +34,10 @@ def plot_daily(*dfs, save=None):
         return lines + [time_text]
 
     anim = animation.FuncAnimation(fig, update, frames=zip(*df_days), init_func=init, blit=True, interval=20)
-    if save:
+    if save is not None:
         anim.save(save)
     plt.show()
 
 
 if __name__ == "__main__":
-    plot_daily(suny_international()['ghi'], save='media/plot_simple.mp4')
+    plot_daily(suny_international()['GHI'], save='media/plot_simple.mp4')
