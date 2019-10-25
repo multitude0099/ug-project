@@ -10,6 +10,9 @@ class suny_international:
     """
     
     """
+    atmospheric_factors = ('Cloud Type', 'Dew Point', 'Temperature', 'Pressure',
+       'Relative Humidity', 'Solar Zenith Angle', 'Precipitable Water',
+       'Wind Direction', 'Wind Speed', 'Fill Flag')
 
     @staticmethod
     def load_data (start='08:00:00',end='18:00:00'):
